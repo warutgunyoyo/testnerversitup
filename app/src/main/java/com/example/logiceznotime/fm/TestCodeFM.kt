@@ -184,4 +184,43 @@ class TestCodeFM : Fragment() {
         return null
     }
 
+        ///เขียน program generate จำนวนเฉพาะ (2, 3, 5, 7, 11, 13, 17, 19, …)g
+    fun isPrime(number: Int): Boolean {
+        if (number <= 1) {
+            return false
+        }
+
+        if (number <= 3) {
+            return true
+        }
+
+        if (number % 2 == 0 || number % 3 == 0) {
+            return false
+        }
+
+        var i = 5
+        while (i * i <= number) {
+            if (number % i == 0 || number % (i + 2) == 0) {
+                return false
+            }
+            i += 6
+        }
+
+        return true
+    }
+
+    fun generatePrimes(n: Int): List<Int> {
+        val primes = mutableListOf<Int>()
+        var number = 2
+
+        while (primes.size < n) {
+            if (isPrime(number)) {
+                primes.add(number)
+            }
+            number++
+        }
+
+        return primes
+    }
+
 }
