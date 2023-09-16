@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="com.example.logiceznotime.fm.TestCodeFM">
+    <androidx.core.widget.ContentLoadingProgressBar
+    android:id="@+id/load"
+    style="?android:attr/progressBarStyleLarge"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:visibility="visible"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/content_linear"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/usdTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:text="USD: " />
+
+    <TextView
+        android:id="@+id/gbpTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+
+        android:text="GBP: " />
+
+    <TextView
+        android:id="@+id/eurTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:text="EUR: " />
+
+
+    <TextView
+        android:id="@+id/timerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:text="Updated: " />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/viewHistory"
+        android:layout_marginTop="20dp"
+        android:text="History"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"/>
+
+
+        <LinearLayout
+            android:layout_margin="16dp"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/spinner_select"
+            android:layout_width="match_parent"
+            android:inputType="number"
+            android:maxLength="3"
+            android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:id="@+id/to_btc"
+            android:layout_margin="16dp"
+            android:text="To BTC"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>
