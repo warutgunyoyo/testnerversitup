@@ -69,11 +69,12 @@ class TestCodeFM : Fragment() {
         toBTC = view.findViewById(R.id.to_btc)
 
         toBTC.setOnClickListener {
-       val valueToDisplay =convertToBTC(tv_spinnerValue.text.toString().toDouble(),rate)
+            val valueToDisplay = convertToBTC(tv_spinnerValue.text.toString().toDouble(), rate)
             Toast.makeText(
                 requireContext(),
                 valueToDisplay.toString(),
-                Toast.LENGTH_LONG).show()
+                Toast.LENGTH_LONG
+            ).show()
 
         }
 
@@ -184,7 +185,22 @@ class TestCodeFM : Fragment() {
         return null
     }
 
-        ///เขียน program generate จำนวนเฉพาะ (2, 3, 5, 7, 11, 13, 17, 19, …)g
+
+    ///เขียน program generate จำนวนเฉพาะ (2, 3, 5, 7, 11, 13, 17, 19, …)g
+    fun generatePrimes(n: Int): List<Int> {
+        val primes = mutableListOf<Int>()
+        var number = 2
+
+        while (primes.size < n) {
+            if (isPrime(number)) {
+                primes.add(number)
+            }
+            number++
+        }
+
+        return primes
+    }
+
     fun isPrime(number: Int): Boolean {
         if (number <= 1) {
             return false
@@ -209,18 +225,23 @@ class TestCodeFM : Fragment() {
         return true
     }
 
-    fun generatePrimes(n: Int): List<Int> {
-        val primes = mutableListOf<Int>()
-        var number = 2
+    //    เขียนโค้ดในการ filter array จาก array ของตัวเลข 2 ชุด โดยให้สมาชิกของ array ชุดแรก เหลือเพียงแค่สมาชิกที่มีอยู่ใน array ชุดที่สองเท่านั้น โดยห้ามใช้ function ที่มีอยู่ เช่น map, filter, contain, etc.
+    fun ArrayTest() {
+        val array1 = intArrayOf(8, 2, 3, 4, 5)
+        val array2 = intArrayOf(3, 4, 5, 6, 7)
 
-        while (primes.size < n) {
-            if (isPrime(number)) {
-                primes.add(number)
+        val filteredArray1 = mutableListOf<Int>()
+
+        for (num1 in array1) {
+            for (num2 in array2) {
+                if (num1 == num2) {
+                    filteredArray1.add(num1)
+                    break
+                }
             }
-            number++
         }
 
-        return primes
+        println("Array 1 หลังกรอง: ${filteredArray1.joinToString()}")
     }
 
 }
